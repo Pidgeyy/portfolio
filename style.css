@@ -1,0 +1,208 @@
+:root {
+  --color-highlight: #000;
+  --main-radius: 10px;
+  --main-padding: 1px;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  background-color: #2e2e31;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 0.8fr 0.1fr 1fr 0.3fr;
+  grid-template-areas:
+	"header header header header header header"
+	"searchbar searchbar searchbar searchbar searchbar searchbar"
+  "content1 content1 content2 content2 content3 content3"
+  "footer footer footer footer footer footer";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+
+.container_acceuil {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 0.2fr 0.1fr;
+  grid-template-areas:
+  "header header header header header header"
+	"searchbar searchbar searchbar searchbar searchbar searchbar";
+  grid-gap: 0.2rem;
+  font-weight: 800;
+  font-size: 12px;
+  color: #004d40;
+  text-align: center;
+}
+
+/*Cases grid*/
+header {
+  background-image: url('portfolio4.webp');
+  grid-area: header;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 500px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+header h1 {
+  margin-top: 5%;
+  color:white;
+}
+
+footer {
+  background-color: #000000;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main{
+  background: #84ffff;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main img {
+	width:100%;
+	height:100%;
+	float:left;
+}
+
+#button {
+  grid-area: button;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  }
+
+#title {
+	grid-area: title;
+	text-align:left;
+	color:white;
+	border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+
+#searchbar {
+  background: #000000;
+  display: flex;
+  grid-area: searchbar;
+  padding-top: var(--main-padding);
+  justify-content: space-evenly;
+  position: relative;
+}
+         
+    /* styling navlist anchor element */
+    #searchbar a {
+        color: #f2f2f2;
+		height : 50%; 
+        padding: 12px;
+        font-size: 15px;
+		width:20%;
+    }
+ 
+    /* hover effect of navlist anchor element */
+    #searchbar a:hover {
+        background-color: #0e7310;
+        color: black;
+    }
+	
+#content1 {
+  background: #ffffff;
+  grid-area: content1;
+  text-align: left;
+  color:rgb(0, 0, 0);
+  border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+
+#content2 {
+  background: #ffffff;
+  grid-area: content2;
+  text-align: left;
+  color:rgb(0, 0, 0);
+  border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+
+#content3 {
+  background: #ffffff;
+  grid-area: content3;
+  text-align: left;
+  color:rgb(0, 0, 0);
+  border-radius: var(--main-radius);
+	padding-top: var(--main-padding);
+}
+
+/*Autres*/
+	.content_text {
+		white-space: normal;
+		text-overflow: ellipsis;
+    font-size:24px;
+    text-align: center;
+	}
+
+  .list{
+    white-space: normal;
+		text-overflow: ellipsis;
+    font-size:24px;
+  }
+  
+  .goo {
+    font-size: 3rem;
+    line-height: 1.35;
+    display: inline;
+    box-decoration-break: clone;
+    background: var(--color-highlight);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.goo:focus {
+    outline: 0;
+}
+
+.middle {
+  margin-top: 140px;
+  text-align: center;
+}
+
+/*ANIMATIONS */
+/*Premiere A*/
+.linux p{
+  margin-left: auto;
+  margin-right:auto;
+  animation: animated-text 4s steps(30,end) 2s 1 normal both,
+             animated-cursor 600ms steps(30,end) infinite;
+}
+
+.linux p {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 28px;
+  color: rgba(255,255,255,.70);
+}
+
+/*animation texte*/
+
+@keyframes animated-text{
+  from{width: 0px;}
+  to{width: 445px;}
+}
+
+/* Animation curseur */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
+}
